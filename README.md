@@ -68,4 +68,43 @@ This project is licensed under the MIT License – you are free to use and modif
 
 Run the project
 
+🗄 Database Setup (SQL Server Queries)
+
 Press F5 to start the local server and open the app in your browser.
+-- Create Birth Certificate Table
+CREATE TABLE BirthCertificatedb (
+    CertificateID INT IDENTITY(1,1) PRIMARY KEY,
+    ChildName NVARCHAR(100),
+    DateOfBirth DATE,
+    Gender NVARCHAR(10),
+    PlaceOfBirth NVARCHAR(100),
+    FatherName NVARCHAR(100),
+    MotherName NVARCHAR(100),
+    Address NVARCHAR(200),
+    RegistrationDate DATETIME DEFAULT GETDATE()
+);
+
+-- Create Users Table
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    Password NVARCHAR(100) NOT NULL
+);
+
+-- Insert a Sample User (Password: admin123)
+INSERT INTO Users (Username, Password) 
+VALUES ('admin', 'admin123');
+
+-- Fetch Top 1000 Birth Certificates (for testing)
+SELECT TOP (1000) 
+    [CertificateID],
+    [ChildName],
+    [DateOfBirth],
+    [Gender],
+    [PlaceOfBirth],
+    [FatherName],
+    [MotherName],
+    [Address],
+    [RegistrationDate]
+FROM [BirthCertificateDB].[dbo].[BirthCertificatedb];
+
