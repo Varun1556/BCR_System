@@ -59,8 +59,11 @@ Restore or create the database in SQL Server.
 Update connection strings in Web.config.
 
 📝 Author
+
 Developed by Varun Kumar Singh
+
 📧 [vs2715450@gmail.com]
+
 🔗 [My LinkedIn Profile : https://www.linkedin.com/in/varun-kumar-singh-934b0824a/]
 
 📜 License
